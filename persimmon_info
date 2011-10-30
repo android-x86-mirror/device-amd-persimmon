@@ -1,0 +1,20 @@
+DMIPATH=/sys/class/dmi/id
+
+persimmon_info()
+{
+	return 1 # auto_detect
+}
+
+detect_hardware()
+{
+	# XXX: If we execute `true` here instead of `persimmon_info`, we end up
+	# with software rendering.  It would be nice to know why this is
+	# happening.
+	persimmon_info
+}
+
+#Boot will hang if this functions is empty, which is why we are executing `true`
+post_detect()
+{
+	true
+}

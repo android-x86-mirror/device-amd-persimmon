@@ -1,0 +1,6 @@
+service userinit /system/bin/sh /system/etc/init.sh
+    oneshot
+    disabled
+
+on property:dev.bootcomplete=1
+    start userinit
